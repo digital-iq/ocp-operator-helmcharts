@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nondefaultname
-  namespace: nondefaultnamespace
+  namespace: openshift-gitops
   labels:
     repo: local
 spec:
@@ -14,7 +14,7 @@ spec:
     helm:
       releaseName: operatorname
     path: operatorname
-    repoURL: https://github.com/digital-iq/ocp-operator-helmcharts.git
+    repoURL: git@github.com:digital-iq/ocp-operator-helmcharts.git
     targetRevision: ocp-4.11
   syncPolicy:
     automated:
